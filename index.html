@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Report</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="new.css">
+    <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg topbar sticky-top px-4" data-bs-theme="dark">
+        <a class="navbar-brand text-white fw-bold" href="#beranda">
+            <i class="bi bi-journal-check brand-light me-1"></i> E-Report <span class="brand-light">Santri</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Buka menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
+                <li class="nav-item"><a class="nav-link" href="#layanan">Layanan</a></li>
+                <li class="nav-item"><a class="nav-link" href="#laporan">Laporan</a></li>
+                <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                <li class="nav-item ms-lg-2 mt-2 mt-lg-0 d-flex gap-2" id="authSlot">
+                    <a class="btn btn-sage px-4" href="login.html">Masuk</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- hero -->
+    <header class="hero" id="beranda">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <h1 class="rise" style="--i:1">Laporan santri, <span class="nice">tercatat rapi dan mudah dipantau</span></h1>
+                    <p class="hero-text rise" style="--i:2">E-Report membantu pengurus mencatat laporan santri, memantau statusnya, dan melihat rekapnya dalam satu tempat.</p>
+                    <div class="d-flex flex-wrap gap-3 rise" style="--i:3">
+                        <a href="#laporan" class="btn btn-forest px-4 py-2">Lihat laporan terbaru</a>
+                        <a href="#tentang" class="btn btn-line px-4 py-2">Tentang E-Report</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 rise" style="--i:4">
+                    <!-- foto: img/hero1.jpg, img/hero2.jpg, img/hero3.jpg -->
+                    <div class="img-stack" id="heroStack" role="button" tabindex="0" aria-label="Klik untuk mengganti foto">
+                        <div class="stack-card img-slot" data-pos="0">
+                            <i class="bi bi-image"></i><span>img/hero1.jpg</span>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCfBWAhQ51AH_USDMeGHw0T8xZRflk5rUGIdm28x51_Q&s=10" alt="Kegiatan santri 1" onerror="this.remove()">
+                        </div>
+                        <div class="stack-card img-slot" data-pos="1">
+                            <i class="bi bi-image"></i><span>img/hero2.jpg</span>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJjdHfut2Mi3DH30gf1a_1S5hucen6fAvoRLLRin1r4Q&s=10" alt="Kegiatan santri 2" onerror="this.remove()">
+                        </div>
+                        <div class="stack-card img-slot" data-pos="2">
+                            <i class="bi bi-image"></i><span>img/hero3.jpg</span>
+                            <img src="data:image/jpeg;base64,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" alt="Kegiatan santri 3" onerror="this.remove()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- tentang -->
+    <section class="section" id="tentang">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5 reveal">
+                    <!-- foto: img/about.jpg -->
+                    <div class="img-slot tall">
+                        <i class="bi bi-image"></i>
+                        <span>img/about.jpg</span>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4-d0g4ULvXdO3W9LkJuz7HjkEn2ECN0ST-Vgmvi520Q&s=10" alt="Suasana pondok" onerror="this.remove()">
+                    </div>
+                </div>
+                <div class="col-lg-7 reveal" style="--i:1">
+                    <h2 class="section-title">Tentang E-Report</h2>
+                    <p class="section-sub">E-Report mencatat laporan santri secara digital, sehingga data tersimpan rapi, statusnya jelas, dan mudah dicari kapan saja.</p>
+                    <div class="row g-3 mt-3">
+                        <div class="col-4"><div class="fact"><strong>145</strong><span>Santri</span></div></div>
+                        <div class="col-4"><div class="fact"><strong>11</strong><span>Kelas</span></div></div>
+                        <div class="col-4"><div class="fact"><strong>14+</strong><span>Asrama</span></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- layanan -->
+    <section class="section bg-soft" id="layanan">
+        <div class="container">
+            <div class="reveal mb-5">
+                <h2 class="section-title">Layanan</h2>
+                <p class="section-sub mb-0">Yang bisa dilakukan lewat E-Report.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4 reveal" style="--i:0">
+                    <div class="card-e">
+                        <div class="icon-circle"><i class="bi bi-journal-plus"></i></div>
+                        <h3 class="h5">Catat laporan</h3>
+                        <p class="text-muted-green mb-0">Tambahkan laporan santri lengkap dengan jenis laporan dan tanggalnya.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal" style="--i:1">
+                    <div class="card-e">
+                        <div class="icon-circle"><i class="bi bi-hourglass-split"></i></div>
+                        <h3 class="h5">Pantau status</h3>
+                        <p class="text-muted-green mb-0">Lihat laporan yang masih menunggu, sudah diterima, atau ditolak.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal" style="--i:2">
+                    <div class="card-e">
+                        <div class="icon-circle"><i class="bi bi-bar-chart-line"></i></div>
+                        <h3 class="h5">Lihat statistik</h3>
+                        <p class="text-muted-green mb-0">Rekap laporan ditampilkan dalam grafik yang mudah dibaca.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- laporan terbaru -->
+    <section class="section" id="laporan">
+        <div class="container">
+            <div class="reveal d-flex flex-wrap justify-content-between align-items-end gap-3 mb-5">
+                <div>
+                    <h2 class="section-title">Laporan terbaru</h2>
+                    <p class="section-sub mb-0">Laporan yang baru masuk.</p>
+                </div>
+                <a href="laporan.html" class="btn btn-line px-4">Lihat semua laporan</a>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4 reveal" style="--i:0">
+                    <div class="card-e">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="status status-wait">Menunggu</span>
+                            <small class="text-muted-green"><i class="bi bi-calendar3"></i> 20 Oktober 2026</small>
+                        </div>
+                        <h3 class="h5"><a class="stretched-link" href="laporan.html#r1">Elang</a></h3>
+                        <p class="text-muted-green mb-0">English Punishment</p>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal" style="--i:1">
+                    <div class="card-e">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="status status-ok">Diterima</span>
+                            <small class="text-muted-green"><i class="bi bi-calendar3"></i> 20 Oktober 2026</small>
+                        </div>
+                        <h3 class="h5"><a class="stretched-link" href="laporan.html#r2">Rafasya</a></h3>
+                        <p class="text-muted-green mb-0">Telat ke masjid</p>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal" style="--i:2">
+                    <div class="card-e">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="status status-no">Ditolak</span>
+                            <small class="text-muted-green"><i class="bi bi-calendar3"></i> 20 Oktober 2026</small>
+                        </div>
+                        <h3 class="h5"><a class="stretched-link" href="laporan.html#r3">Raffi</a></h3>
+                        <p class="text-muted-green mb-0">Main mobile legend</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- faq -->
+    <section class="section bg-sand" id="faq">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4 reveal">
+                    <h2 class="section-title">Pertanyaan umum</h2>
+                    <p class="section-sub">Jawaban singkat seputar E-Report.</p>
+                </div>
+                <div class="col-lg-8 reveal" style="--i:1">
+                    <div class="accordion accordion-flush" id="faqList">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#f1" aria-expanded="true" aria-controls="f1">
+                                    Siapa yang menggunakan E-Report?
+                                </button>
+                            </h3>
+                            <div id="f1" class="accordion-collapse collapse show" data-bs-parent="#faqList">
+                                <div class="accordion-body">E-Report digunakan oleh pengurus dan admin yang mengelola data serta laporan santri.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f2" aria-expanded="false" aria-controls="f2">
+                                    Apa arti status Menunggu, Diterima, dan Ditolak?
+                                </button>
+                            </h3>
+                            <div id="f2" class="accordion-collapse collapse" data-bs-parent="#faqList">
+                                <div class="accordion-body">Menunggu berarti laporan belum diperiksa. Diterima berarti laporan sudah disetujui. Ditolak berarti laporan tidak disetujui.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f3" aria-expanded="false" aria-controls="f3">
+                                    Cara Ke Dashboard
+                                </button>
+                            </h3>
+                            <div id="f3" class="accordion-collapse collapse" data-bs-parent="#faqList">
+                                <div class="accordion-body">Username: admin Password: admin123</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f4" aria-expanded="false" aria-controls="f4">
+                                    Apakah laporan bisa diubah atau dihapus?
+                                </button>
+                            </h3>
+                            <div id="f4" class="accordion-collapse collapse" data-bs-parent="#faqList">
+                                <div class="accordion-body">Bisa. Dari tabel Data Laporan, admin dapat melihat, mengubah, atau menghapus laporan.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-5">
+                    <span class="footer-brand">E-Report <span class="brand-light">Santri</span></span>
+                    <p class="mt-2 mb-0 footer-text">Sistem pelaporan santri yang rapi dan mudah dipantau.</p>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <h4>Menu</h4>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#tentang">Tentang</a></li>
+                        <li><a href="#layanan">Layanan</a></li>
+                        <li><a href="#laporan">Laporan</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <h4>Kontak</h4>
+                    <ul class="list-unstyled mb-0 footer-text">
+                        <li><i class="bi bi-envelope"></i> admin@contoh.com</li>
+                        <li><i class="bi bi-geo-alt"></i> Alamat pondok di sini</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="copy mb-0">&copy; 2026 E-Report. Semua hak dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="auth.js"></script>
+    <script>
+        // bayangan navbar saat di-scroll
+        const nav = document.querySelector('.topbar');
+        addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 10), { passive: true });
+
+        // munculkan elemen pelan-pelan saat masuk layar
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('show');
+                    io.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    </script>
+    <script src="Hero img.js"></script>
+</body>
+</html>

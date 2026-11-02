@@ -1,0 +1,16 @@
+<!-- Ganti SELURUH blok .img-slot di hero (yang img/hero.jpg) dengan ini -->
+<!-- Gambar: simpan di img/hero1.jpg, img/hero2.jpg, img/hero3.jpg -->
+<div class="img-stack" id="heroStack" role="button" tabindex="0" aria-label="Klik untuk mengganti foto">
+    <div class="stack-card img-slot" data-pos="0">
+        <i class="bi bi-image"></i><span>img/hero1.jpg</span>
+        <img src="img/hero1.jpg" alt="Kegiatan santri 1" onerror="this.remove()">
+    </div>
+    <div class="stack-card img-slot" data-pos="1">
+        <i class="bi bi-image"></i><span>img/hero2.jpg</span>
+        <img src="img/hero2.jpg" alt="Kegiatan santri 2" onerror="this.remove()">
+    </div>
+    <div class="stack-card img-slot" data-pos="2">
+        <i class="bi bi-image"></i><span>img/hero3.jpg</span>
+        <img src="img/hero3.jpg" alt="Kegiatan santri 3" onerror="this.remove()">
+    </div>
+</div>
